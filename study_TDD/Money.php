@@ -1,2 +1,3 @@
 <?php
-this is test
+echo 'hoge';
+echo 'push‚ÌƒeƒXƒg’†';
