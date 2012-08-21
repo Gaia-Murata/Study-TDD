@@ -1,9 +1,13 @@
 <?php
 
-class Doller
+class Money
 {
+    protected $amount;
 
-    private $amount;
+}
+
+class Doller extends Money
+{
 
     function Doller($x)  //本のamountはわかりづらいのでxにした
     {
