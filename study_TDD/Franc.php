@@ -1,6 +1,7 @@
  <?php
-
- class Franc{
+ require_once dirname(__FILE__).'/Money.php';
+ 
+ class Franc extends Money{
      private $amount;
 
      function __construct($amount){
