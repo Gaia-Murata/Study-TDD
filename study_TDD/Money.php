@@ -1,3 +1,4 @@
 <?php
-echo 'hoge';
-echo 'push‚ÌƒeƒXƒg’†';
+
+class Money{
+}
