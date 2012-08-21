@@ -3,9 +3,8 @@
 /**
  * @author Ethan Hu
  * 
- * Chapter 1
+ * Chapter 2
  */
-class DollarTest extends PHPUnit_Framework_TestCase
 class Dollar
 {
     public $amount;
@@ -16,6 +15,6 @@ class Dollar
     }
  
     public function times($multiplier){
-        $this->amount *= $multiplier;
+        return $this->amount * $multiplier;
     }
 }

@@ -4,7 +4,7 @@ require_once 'Dollar.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 1 test
+ * Chapter 2 test
  */
 class DollarTest extends PHPUnit_Framework_TestCase
 {
@@ -29,7 +29,7 @@ class DollarTest extends PHPUnit_Framework_TestCase
         foreach ($cases as $case){
             $dollar = new Dollar($case['amount']);
             $result = $dollar->times($case['time']);
-            $this->assertEquals($case['result'], $dollar->amount);
+            $this->assertEquals($case['result'], $result);
         }
     }
 }
