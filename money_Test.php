@@ -23,9 +23,9 @@ class money_Test extends PHPUnit_Framework_TestCase
 
     public function  testFrancMultiplication()
     {
-        $five = new Doller(5);
-        $this->assertEquals(new Doller(10), $five->times(2));
-        $this->assertEquals(new Doller(15), $five->times(3));
+        $five = new Franc(5);
+        $this->assertEquals(new Franc(10), $five->times(2));
+        $this->assertEquals(new Franc(15), $five->times(3));
     }
 
     public function testEquality()
