@@ -4,7 +4,7 @@ require_once 'Franc.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 5 test
+ * Chapter 6 test
  */
 class FrancTest extends PHPUnit_Framework_TestCase
 {
