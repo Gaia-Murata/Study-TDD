@@ -3,11 +3,11 @@
 /**
  * @author Ethan Hu
  * 
- * Chapter 3
+ * Chapter 4
  */
 class Dollar
 {
-    private $amount;
+    public $amount;
 
     function __construct($amount)
     {

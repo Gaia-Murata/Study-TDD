@@ -4,7 +4,7 @@ require_once 'Dollar.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 3 test
+ * Chapter 4 test
  */
 class DollarTest extends PHPUnit_Framework_TestCase
 {
@@ -36,17 +36,17 @@ class DollarTest extends PHPUnit_Framework_TestCase
     public function testEquals()
     {
         $cases = array(
-            array('amount1' => 5,   'amount2' => 5, 'result' => true),
-            array('amount1' => 10,  'amount2' => 10, 'result' => true),
-            array('amount1' => 15,  'amount2' => 15, 'result' => true),
-            array('amount1' => 20,  'amount2' => 15, 'result' => false),
-            array('amount1' => 30,  'amount2' => 40, 'result' => false),
+            array('amount1' => 5,   'amount2' => 5, 'time2' => 1),
+            array('amount1' => 10,  'amount2' => 5, 'time2' => 2),
+            array('amount1' => 15,  'amount2' => 5, 'time2' => 3),
+            array('amount1' => 50,  'amount2' => 50, 'time2' => 1),
+            array('amount1' => 50,  'amount2' => 10, 'time2' => 5),
         );
 
         foreach ($cases as $case){
             $dollar1 = new Dollar($case['amount1']);
             $dollar2 = new Dollar($case['amount2']);
-            $this->assertEquals($dollar1->equals($dollar2), $case['result']);
+            $this->assertEquals($dollar1->amount, $dollar2->times($case['time2']));
         }
         
     }
