@@ -9,7 +9,7 @@ class Dollar
 
    public function times($x)
    {
-       $this->amount = $this->amount * $x;
+       return $this->amount * $x;
    }
 	
 }
