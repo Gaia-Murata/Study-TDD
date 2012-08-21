@@ -2,17 +2,17 @@
  require_once dirname(__FILE__).'/Money.php';
  
  class Franc extends Money{
+    function __construct($amount){
+        $this->amount = $amount;
+    }
 
-     function __construct($amount){
-         $this->amount = $amount;
-     }
+    public function times($x)
+    {
+        return $this->amount * $x;
+    }
 
-     public function times($x)
-     {
-         return $this->amount * $x;
-     }
-
-     public function equals($doll){
-         return($this->amount === $doll->amount);
-     }
+    public function equals($money){
+        if($money instanceof Money)return($this->amount === $money->amount);
+        return false;
+    }
  }

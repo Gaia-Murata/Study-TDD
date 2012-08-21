@@ -3,41 +3,32 @@ require_once dirname(__FILE__)."/Dollar.php";
 
 
 class MoneyTest extends PHPUnit_Framework_TestCase{
-	public function testMultiplication(){
-     $five = new Dollar(5);
-     $result = $five->times(2);
-     $this->assertEquals(10, $result);
+   public function testMultiplication(){
+       $five_dollar = new Dollar(5);
+       $result = $five_dollar->times(2);
+       $this->assertEquals(10, $result);
 
-     $result = $five->times(3);
-     $this->assertEquals(15, $result);
-	}
-	
-	public function testEquals(){
-		$ten = new Dollar(10);
-		$ten_sub = new Dollar(10);
-		$eleven = new Dollar(11);
+       $result = $five_dollar->times(3);
+       $this->assertEquals(15, $result);
 
-		$this->assertTrue($ten->equals($ten_sub));
-		$this->assertFalse($ten->equals($eleven));
-	}
-	
-	/*Franc‚ÌƒeƒXƒg*/
-	public function testFrancMultiplication(){
-		$five = new Franc(5);
-		$result = $five->times(2);
-		$this->assertEquals(10, $result);
-	
-		$result = $five->times(3);
-		$this->assertEquals(15, $result);
-	}
-	
-	public function testFrancEquals(){
-		$ten = new Franc(10);
-		$ten_sub = new Franc(10);
-		$eleven = new Franc(11);
-	
-		$this->assertTrue($ten->equals($ten_sub));
-		$this->assertFalse($ten->equals($eleven));
-	
-	}
+       $five_franc = new Franc(5);
+       $result = $five_franc->times(2);
+       $this->assertEquals(10, $result);
+
+       $result = $five_franc->times(3);
+       $this->assertEquals(15, $result);
+  }
+
+   public function testEquals(){
+       $ten_dollar = new Dollar(10);
+
+       $this->assertTrue($ten_dollar->equals(new Dollar(10)));
+       $this->assertFalse($ten_dollar->equals(new Dollar(11)));
+
+       $ten_franc = new Franc(10);
+
+       $this->assertTrue($ten_franc->equals(new Franc(10)));
+       $this->assertFalse($ten_franc->equals(new Franc(11)));
+
+   }
 }
