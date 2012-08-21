@@ -1,3 +1,0 @@
-testdayo
-aiueo
-mokkai
