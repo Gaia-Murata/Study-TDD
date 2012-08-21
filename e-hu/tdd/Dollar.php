@@ -3,18 +3,24 @@
 /**
  * @author Ethan Hu
  * 
- * Chapter 2
+ * Chapter 3
  */
 class Dollar
 {
-    public $amount;
+    private $amount;
 
     function __construct($amount)
     {
         $this->amount = $amount;
     }
  
-    public function times($multiplier){
+    public function times($multiplier)
+    {
         return $this->amount * $multiplier;
+    }
+
+    public function equals(&$dollar)
+    {
+        return $this->amount == $dollar->amount;
     }
 }
