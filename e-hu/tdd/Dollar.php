@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @author Ethan Hu
+ * 
+ * Chapter 1
+ */
+class DollarTest extends PHPUnit_Framework_TestCase
 class Dollar
 {
     public $amount;

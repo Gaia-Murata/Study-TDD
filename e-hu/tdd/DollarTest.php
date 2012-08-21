@@ -4,7 +4,7 @@ require_once 'Dollar.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 1
+ * Chapter 1 test
  */
 class DollarTest extends PHPUnit_Framework_TestCase
 {
