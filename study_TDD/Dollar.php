@@ -12,4 +12,7 @@ class Dollar
        return $this->amount * $x;
    }
 	
+   public function equals($doll){
+   	return($this->amount === $doll->amount);
+   }
 }
