@@ -1,9 +1,8 @@
 <?php
+require_once 'Money.php';
 
-class Franc
+class Franc extends Money
 {
-	private $amount;
-
 	public function __construct($num)
 	{
 		$this->amount = $num;
@@ -15,12 +14,6 @@ class Franc
 		
 		return new Franc($this->amount * $multiplier); 
 	}
-
-	public function equals($object)
-	{
-		return $this->amount === $object->amount;	
-	}
-	
 }
 
 
