@@ -15,7 +15,10 @@ class MoneyTest extends PHPUnit_Framework_TestCase{
 	public function testEquals(){
 		$ten = new Dollar(10);
 		$ten_sub = new Dollar(10);
-	
+		$eleven = new Dollar(11);
+
 		$this->assertTrue($ten->equals($ten_sub));
+		$this->assertFalse($ten->equals($eleven));
+		
 	}
 }
