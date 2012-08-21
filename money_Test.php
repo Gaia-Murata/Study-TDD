@@ -35,6 +35,13 @@ class money_Test extends PHPUnit_Framework_TestCase
         $obj3 = new Doller(6);
         $this->assertTrue($obj1->equals($obj2));
         $this->assertFalse($obj1->equals($obj3));
+
+        $obj1 = new Franc(5);
+        $obj2 = new Franc(5);
+        $obj3 = new Franc(6);
+        $this->assertTrue($obj1->equals($obj2));
+        $this->assertFalse($obj1->equals($obj3));
+
     }
 
 }

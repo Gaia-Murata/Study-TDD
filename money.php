@@ -4,6 +4,11 @@ class Money
 {
     protected $amount;
 
+    function equals($obj)
+    {
+        return $this->amount == $obj->amount;
+    }
+
 }
 
 class Doller extends Money
@@ -19,18 +24,11 @@ class Doller extends Money
         return new Doller($this->amount * $multi);
     }
 
-    function equals($obj)
-    {
-        return $this->amount == $obj->amount;
-    }
-
 }
 
 
-class Franc
+class Franc extends Money
 {
-
-    private $amount;
 
     function Franc($x)  //本のamountはわかりづらいのでxにした
     {
@@ -42,9 +40,9 @@ class Franc
         return new Franc($this->amount * $multi);
     }
 
-    function equals($obj)
-    {
-        return $this->amount == $obj->amount;
-    }
+/*     function equals($obj) */
+/*     { */
+/*         return $this->amount == $obj->amount; */
+/*     } */
 
 }
