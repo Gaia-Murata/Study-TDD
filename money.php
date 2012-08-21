@@ -6,7 +6,8 @@ class Money
 
     function equals($obj)
     {
-        return $this->amount == $obj->amount;
+        return $this->amount == $obj->amount
+            && get_class($this) == get_class($obj);;
     }
 
 }
@@ -39,10 +40,5 @@ class Franc extends Money
     {
         return new Franc($this->amount * $multi);
     }
-
-/*     function equals($obj) */
-/*     { */
-/*         return $this->amount == $obj->amount; */
-/*     } */
 
 }
