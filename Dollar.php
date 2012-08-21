@@ -2,8 +2,6 @@
 
 class Dollar
 {
-	protected $amount;
-
 	public function __construct($num)
 	{
 		$this->amount = $num;
@@ -11,9 +9,9 @@ class Dollar
 
 	public	function times($multiplier)
 	{
-		$this->amount *= $multiplier;	
+		//$this->amount *= $multiplier;	
 		
-		return $this->amount;
+		return new Dollar($this->amount * $multiplier); 
 	}
 	
 }
