@@ -1,5 +1,7 @@
 <?php
-class Dollar
+ require_once dirname(__FILE__).'/Money.php';
+
+ class Dollar extends Money
 {
    private $amount;
 
