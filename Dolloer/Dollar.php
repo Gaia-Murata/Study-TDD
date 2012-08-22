@@ -4,7 +4,7 @@
  */
 class Dollar
 {
-    public $amount = 0 ;
+    private $amount = 0 ;
 
     function __construct($amount)
     {
