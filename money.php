@@ -10,7 +10,7 @@ class Money
     function equals($obj)
     {
         return $this->amount == $obj->amount
-            && get_class($this) == get_class($obj);;
+            && get_class($this) == get_class($obj);
     }
 
     function doller($amnt)
