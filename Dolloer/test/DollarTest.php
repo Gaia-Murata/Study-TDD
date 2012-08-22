@@ -9,6 +9,7 @@ class DollarTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(new Dollar(15), $five->times(3));
     }
 
+
     public function testEquality()
     {
         $object = new Dollar(5);
@@ -16,25 +17,6 @@ class DollarTest extends PHPUnit_Framework_TestCase
         $object = new Dollar(5);
         $this->assertFalse($object->equals(new Dollar(6)));
     }
-
-}
-
-class FrancTest extends PHPUnit_Framework_TestCase
-{
-    public function testFrancMlutiplication()
-    {
-        $five = new Franc(5);
-        $this->assertEquals(new Franc(10), $five->times(2));
-        $this->assertEquals(new Franc(15), $five->times(3));
-    }
-
-//    public function testEquality()
-//    {
-//        $object = new Dollar(5);
-//        $this->assertTrue($object->equals(new Dollar(5)));
-//        $object = new Dollar(5);
-//        $this->assertFalse($object->equals(new Dollar(6)));
-//    }
 
 }
 ?>

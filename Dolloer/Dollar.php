@@ -1,11 +1,10 @@
 <?php
+require_once(dirname(__FILE__).'/./Money.php');
 /**
  * Dollar
  */
-class Dollar
+class Dollar extends Money
 {
-    private $amount = 0 ;
-
     function __construct($amount)
     {
         $this->amount = $amount;
@@ -16,8 +15,4 @@ class Dollar
         return New Dollar($this->amount * $multiplier); 
     }
 
-    public function equals($object)
-    {
-        return $this->amount === $object->amount;
-    }
 }
