@@ -50,4 +50,11 @@ class money_Test extends PHPUnit_Framework_TestCase
         $this->assertFalse($obj1->equals($obj2));
     }
 
+    public function testCurrency()
+    {
+        $money = new Money;
+        $this->assertEquals("USD", $money->doller(1)->currency() );
+        $this->assertEquals("CHF", $money->franc(1)->currency() );
+    }
+
 }

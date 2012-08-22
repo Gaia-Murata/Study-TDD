@@ -35,6 +35,11 @@ class Doller extends Money
         return new Doller($this->amount * $multi);
     }
 
+    function currency()
+    {
+        return "USD";
+    }
+    
 }
 
 
@@ -51,4 +56,8 @@ class Franc extends Money
         return new Franc($this->amount * $multi);
     }
 
+    function currency()
+    {
+        return "CHF";
+    }
 }
