@@ -9,4 +9,8 @@
     public function times($x){
     	return new Franc($this->amount * $x);
     }
+ 
+    public function currency(){
+    	return "CHF";
+    }
  }
