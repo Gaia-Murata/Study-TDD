@@ -10,6 +10,9 @@ require_once 'Franc.php';
  */
 class Money
 {
+    public $amount;
+    public $currency;
+
     public function dollar($amount)
     {
         return new Dollar($amount);
@@ -19,4 +22,10 @@ class Money
     {
         return new Franc($amount);
     }
+
+    public function currency()
+    {
+        return $this->currency;
+    }
+
 }

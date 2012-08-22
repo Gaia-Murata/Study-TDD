@@ -5,15 +5,14 @@ require_once 'Money.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 8
+ * Chapter 9
  */
 class Franc extends Money
 {
-    public $amount;
-
     function __construct($amount)
     {
         $this->amount = $amount;
+        $this->currency = 'CHF';
     }
  
     public function times($multiplier)
@@ -25,4 +24,5 @@ class Franc extends Money
     {
         return $this->amount == $money->amount;
     }
+
 }
