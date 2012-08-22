@@ -5,14 +5,10 @@
 {
     function __construct($amount){
         $this->amount = $amount;
+        $this->currency = "USD";
     }
     
     public function times($x){
     	return new Dollar($this->amount * $x);
     }
-    
-    public function currency(){
-    	return "USD";
-    }
-
 }
