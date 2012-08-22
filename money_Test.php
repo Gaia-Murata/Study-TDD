@@ -16,7 +16,8 @@ class money_Test extends PHPUnit_Framework_TestCase
 
     public function  testMultiplication()
     {
-        $five = new Doller(5);
+        $money = new Money;
+        $five = $money->doller(5);
         $this->assertEquals(new Doller(10), $five->times(2));
         $this->assertEquals(new Doller(15), $five->times(3));
     }

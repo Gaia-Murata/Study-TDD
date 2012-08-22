@@ -10,6 +10,11 @@ class Money
             && get_class($this) == get_class($obj);;
     }
 
+    function doller($x)
+    {
+        return new Doller($x);
+    }
+
 }
 
 class Doller extends Money
