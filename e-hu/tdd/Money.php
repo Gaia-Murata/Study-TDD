@@ -1,26 +1,22 @@
 <?php
 
+require_once 'Dollar.php';
+require_once 'Franc.php';
+
 /**
  * @author Ethan Hu
  * 
- * Chapter 7
+ * Chapter 8
  */
 class Money
 {
-    public $amount;
-
-    function __construct($amount)
+    public function dollar($amount)
     {
-        $this->amount = $amount;
-    }
- 
-    public function times($multiplier)
-    {
-        return $this->amount * $multiplier;
+        return new Dollar($amount);
     }
 
-    public function equals(&$money)
+    public function franc($amount)
     {
-        return $this->amount == $money->amount;
+        return new Franc($amount);
     }
 }
