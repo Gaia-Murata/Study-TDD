@@ -28,7 +28,7 @@ class Money
         return $this->currency;
     }
 
-    function super($amnt, $crncy) //本書のamountはわかりづらいのでamntにした
+    function super($amnt, $crncy)
     {
         $this->amount = $amnt;
         $this->currency = $crncy;
@@ -39,15 +39,14 @@ class Money
 class Doller extends Money
 {
 
-    function Doller($amnt, $crncy) //本書のamountはわかりづらいのでamntにした
+    function Doller($amnt, $crncy)
     {
         $this->super($amnt, $crncy);
     }
 
     function times($multi)
     {
-        $money = new Money;
-        return $money->doller($this->amount * $multi);
+        return new Doller($this->amount * $multi, "USD");
     }
 
 }
@@ -56,15 +55,14 @@ class Doller extends Money
 class Franc extends Money
 {
 
-    function Franc($amnt, $crncy) //本書のamountはわかりづらいのでamntにした
+    function Franc($amnt, $crncy)
     {
         $this->super($amnt, $crncy);
     }
 
     function times($multi)
     {
-        $money = new Money;
-        return $money->franc($this->amount * $multi);
+        return new Franc($this->amount * $multi, "CHF");
     }
 
 }
