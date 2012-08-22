@@ -6,7 +6,6 @@ class Money
     protected $currency;
 
 
-
     function equals($obj)
     {
         return $this->amount == $obj->amount
@@ -46,7 +45,7 @@ class Doller extends Money
 
     function times($multi)
     {
-        return new Doller($this->amount * $multi, "USD");
+        return new Doller($this->amount * $multi, $this->currency);
     }
 
 }
@@ -62,7 +61,7 @@ class Franc extends Money
 
     function times($multi)
     {
-        return new Franc($this->amount * $multi, "CHF");
+        return new Franc($this->amount * $multi, $this->currency);
     }
 
 }
