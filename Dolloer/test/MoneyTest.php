@@ -16,6 +16,8 @@ class FrancTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($object->equals(new Franc(5)));
         $object = new Franc(5);
         $this->assertFalse($object->equals(new Franc(6)));
+        $franc = new Franc(5);
+        $this->assertFalse($franc->equals(new Dollar(5)));
     }
 
 }

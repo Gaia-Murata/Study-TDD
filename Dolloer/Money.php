@@ -11,8 +11,20 @@ class Money
     {
     }
 
+    static public function dollar($amount)
+    {
+        return New Dollar($amount);
+    }
+
+    static public function franc($amount)
+    {
+        return New Franc($amount);
+    }
+
     public function equals($object)
     {
-        return $this->amount === $object->amount;
+        return $this->amount === $object->amount
+            && get_class($this) === get_class($object);
     }
+
 }

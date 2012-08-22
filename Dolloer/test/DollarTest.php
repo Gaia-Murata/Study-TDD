@@ -1,10 +1,11 @@
 <?php
 require_once(dirname(__FILE__).'/../Dollar.php');
+require_once(dirname(__FILE__).'/../Money.php');
 class DollarTest extends PHPUnit_Framework_TestCase
 {
     public function testMlutiplication()
     {
-        $five = new Dollar(5);
+        $five = Money::dollar(5);
         $this->assertEquals(new Dollar(10), $five->times(2));
         $this->assertEquals(new Dollar(15), $five->times(3));
     }
@@ -12,10 +13,8 @@ class DollarTest extends PHPUnit_Framework_TestCase
 
     public function testEquality()
     {
-        $object = new Dollar(5);
-        $this->assertTrue($object->equals(new Dollar(5)));
-        $object = new Dollar(5);
-        $this->assertFalse($object->equals(new Dollar(6)));
+        $this->assertTrue(Money::dollar(5)->equals(new Dollar(5)));
+        $this->assertFalse(Money::dollar(5)->equals(new Dollar(6)));
     }
 
 }
