@@ -1,10 +1,11 @@
 <?php
 
 require_once 'Dollar.php';
+require_once 'Franc.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 4 test
+ * Chapter 7 test
  */
 class DollarTest extends PHPUnit_Framework_TestCase
 {
@@ -44,9 +45,9 @@ class DollarTest extends PHPUnit_Framework_TestCase
         );
 
         foreach ($cases as $case){
-            $dollar1 = new Dollar($case['amount1']);
-            $dollar2 = new Dollar($case['amount2']);
-            $this->assertEquals($dollar1->amount, $dollar2->times($case['time2']));
+            $franc  = new Franc($case['amount1']);
+            $dollar = new Dollar($case['amount2']);
+            $this->assertEquals($franc->amount, $dollar->times($case['time2']));
         }
         
     }

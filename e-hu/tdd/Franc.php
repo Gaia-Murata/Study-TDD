@@ -5,7 +5,7 @@ require_once 'Money.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 6
+ * Chapter 7
  */
 class Franc extends Money
 {

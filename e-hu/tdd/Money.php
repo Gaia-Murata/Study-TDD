@@ -3,7 +3,7 @@
 /**
  * @author Ethan Hu
  * 
- * Chapter 6
+ * Chapter 7
  */
 class Money
 {
