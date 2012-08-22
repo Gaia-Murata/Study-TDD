@@ -11,14 +11,14 @@ class Money
             && get_class($this) == get_class($obj);;
     }
 
-    function doller($x)
+    function doller($amnt)
     {
-        return new Doller($x);
+        return new Doller($amnt, "USD");
     }
 
-    function franc($x)
+    function franc($amnt)
     {
-        return new Franc($x);
+        return new Franc($amnt, "CHF");
     }
 
     function currency()
@@ -31,15 +31,16 @@ class Money
 class Doller extends Money
 {
 
-    function Doller($x) //本書のamountはわかりづらいのでxにした
+    function Doller($amnt, $crncy) //本書のamountはわかりづらいのでamntにした
     {
-        $this->amount = $x;
-        $this->currency = "USD";
+        $this->amount = $amnt;
+        $this->currency = $crncy;
     }
 
     function times($multi)
     {
-        return new Doller($this->amount * $multi);
+        $money = new Money;
+        return $money->doller($this->amount * $multi);
     }
 
 }
@@ -48,15 +49,16 @@ class Doller extends Money
 class Franc extends Money
 {
 
-    function Franc($x) //本書のamountはわかりづらいのでxにした
+    function Franc($amnt, $crncy) //本書のamountはわかりづらいのでamntにした
     {
-        $this->amount = $x;
-        $this->currency = "CHF";
+        $this->amount = $amnt;
+        $this->currency = $crncy;
     }
 
     function times($multi)
     {
-        return new Franc($this->amount * $multi);
+        $money = new Money;
+        return $money->franc($this->amount * $multi);
     }
 
 }
