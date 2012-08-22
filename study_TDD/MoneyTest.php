@@ -3,21 +3,26 @@ require_once dirname(__FILE__)."/Dollar.php";
 
 
 class MoneyTest extends PHPUnit_Framework_TestCase{
-   public function testMultiplication(){
-       $five_dollar = new Dollar(5);
-       $result = $five_dollar->times(2);
-       $this->assertEquals(10, $result);
+  public function testMultiplication(){
+      $five_dollar = new Dollar(5);
+      $ten_dollar = new Dollar(10);
+      $fifteen_dollar = new Dollar(15);
 
-       $result = $five_dollar->times(3);
-       $this->assertEquals(15, $result);
+      $result = $five_dollar->times(2);
+      $this->assertTrue($ten_dollar->equals($result));
 
-       $five_franc = new Franc(5);
-       $result = $five_franc->times(2);
-       $this->assertEquals(10, $result);
+      $result = $five_dollar->times(3);
+      $this->assertTrue($fifteen_dollar->equals($result));
 
-       $result = $five_franc->times(3);
-       $this->assertEquals(15, $result);
-  }
+      $five_franc = new Franc(5);
+      $ten_franc = new Franc(10);
+      $fifteen_franc = new Franc(15);
+      $result = $five_franc->times(2);
+      $this->assertTrue($ten_franc->equals($result));
+
+      $result = $five_franc->times(3);
+      $this->assertTrue($fifteen_franc->equals($result));
+ }
 
    public function testEquals(){
        $ten_dollar = new Dollar(10);

@@ -5,9 +5,8 @@
     function __construct($amount){
         $this->amount = $amount;
     }
-
-    public function times($x)
-    {
-        return $this->amount * $x;
+    
+    public function times($x){
+    	return new Franc($this->amount * $x);
     }
  }
