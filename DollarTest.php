@@ -6,19 +6,22 @@ class DollarTest extends PHPUnit_Framework_TestCase
 {
 	public function testMultiplication()
 	{
-		$five = new Dollar(5);		
-		$this->assertEquals(new Dollar(10), $five->times(2));
-		$this->assertEquals(new Dollar(15), $five->times(3));
+		$money = new Money();		
+		$five = $money->dollar(5);
+		$this->assertEquals($money->dollar(10), $five->times(2));
+		$this->assertEquals($money->dollar(15), $five->times(3));
 	}	
 
 	public function testEquality()
 	{
-		$dollar= new Dollar(5);
-		$this->assertTrue($dollar->equals(new Dollar(5)));
-		$this->assertFalse($dollar->equals(new Dollar(6)));
-		$franc = new Franc(5);
-		$this->assertTrue($franc->equals(new Franc(5)));
-		$this->assertFalse($franc->equals(new Franc(6)));
-		$this->assertFalse($franc->equals(new Dollar(5)));
+		$money = new Money();
+		$dollar= $money->dollar(5);
+		$this->assertTrue($dollar->equals($money->dollar(5)));
+		$this->assertFalse($dollar->equals($money->dollar(6)));
+
+		$franc = $money->franc(5);
+		$this->assertTrue($franc->equals($money->franc(5)));
+		$this->assertFalse($franc->equals($money->franc(6)));
+		$this->assertFalse($franc->equals($money->dollar(5)));
 	}
 }
