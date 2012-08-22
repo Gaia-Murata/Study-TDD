@@ -18,33 +18,35 @@ class money_Test extends PHPUnit_Framework_TestCase
     {
         $money = new Money;
         $five = $money->doller(5);
-        $this->assertEquals(new Doller(10), $five->times(2));
-        $this->assertEquals(new Doller(15), $five->times(3));
+        $this->assertEquals($money->doller(10), $five->times(2));
+        $this->assertEquals($money->doller(15), $five->times(3));
     }
 
     public function  testFrancMultiplication()
     {
-        $five = new Franc(5);
-        $this->assertEquals(new Franc(10), $five->times(2));
-        $this->assertEquals(new Franc(15), $five->times(3));
+        $money = new Money;
+        $five = $money->franc(5);
+        $this->assertEquals($money->franc(10), $five->times(2));
+        $this->assertEquals($money->franc(15), $five->times(3));
     }
 
     public function testEquality()
     {
-        $obj1 = new Doller(5);
-        $obj2 = new Doller(5);
-        $obj3 = new Doller(6);
+        $money = new Money;
+        $obj1 = $money->doller(5);
+        $obj2 = $money->doller(5);
+        $obj3 = $money->doller(6);
         $this->assertTrue($obj1->equals($obj2));
         $this->assertFalse($obj1->equals($obj3));
 
-        $obj1 = new Franc(5);
-        $obj2 = new Franc(5);
-        $obj3 = new Franc(6);
+        $obj1 = $money->franc(5);
+        $obj2 = $money->franc(5);
+        $obj3 = $money->franc(6);
         $this->assertTrue($obj1->equals($obj2));
         $this->assertFalse($obj1->equals($obj3));
 
-        $obj1 = new Franc(5);
-        $obj2 = new Doller(5);
+        $obj1 = $money->franc(5);
+        $obj2 = $money->doller(5);
         $this->assertFalse($obj1->equals($obj2));
     }
 

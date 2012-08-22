@@ -15,6 +15,11 @@ class Money
         return new Doller($x);
     }
 
+    function franc($x)
+    {
+        return new Franc($x);
+    }
+
 }
 
 class Doller extends Money
