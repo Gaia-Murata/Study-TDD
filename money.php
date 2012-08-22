@@ -3,6 +3,7 @@
 class Money
 {
     protected $amount;
+    protected $currency;
 
     function equals($obj)
     {
@@ -20,6 +21,11 @@ class Money
         return new Franc($x);
     }
 
+    function currency()
+    {
+        return $this->currency;
+    }
+
 }
 
 class Doller extends Money
@@ -28,6 +34,7 @@ class Doller extends Money
     function Doller($x) //本書のamountはわかりづらいのでxにした
     {
         $this->amount = $x;
+        $this->currency = "USD";
     }
 
     function times($multi)
@@ -35,11 +42,6 @@ class Doller extends Money
         return new Doller($this->amount * $multi);
     }
 
-    function currency()
-    {
-        return "USD";
-    }
-    
 }
 
 
@@ -49,6 +51,7 @@ class Franc extends Money
     function Franc($x) //本書のamountはわかりづらいのでxにした
     {
         $this->amount = $x;
+        $this->currency = "CHF";
     }
 
     function times($multi)
@@ -56,8 +59,4 @@ class Franc extends Money
         return new Franc($this->amount * $multi);
     }
 
-    function currency()
-    {
-        return "CHF";
-    }
 }
