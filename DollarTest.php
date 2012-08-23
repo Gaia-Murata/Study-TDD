@@ -1,4 +1,5 @@
 <?php
+require_once 'Money.php';
 require_once 'Dollar.php';
 require_once 'Franc.php';
 
@@ -14,14 +15,13 @@ class DollarTest extends PHPUnit_Framework_TestCase
 
 	public function testEquality()
 	{
-		$money = new Money();
-		$dollar= $money->dollar(5);
-		$this->assertTrue($dollar->equals($money->dollar(5)));
-		$this->assertFalse($dollar->equals($money->dollar(6)));
+		$dollar= Money::dollar(5);
+		$this->assertTrue($dollar->equals(Money::dollar(5)));
+		$this->assertFalse($dollar->equals(Money::dollar(6)));
 
-		$franc = $money->franc(5);
-		$this->assertTrue($franc->equals($money->franc(5)));
-		$this->assertFalse($franc->equals($money->franc(6)));
-		$this->assertFalse($franc->equals($money->dollar(5)));
+		$franc = Money::franc(5);
+		$this->assertTrue($franc->equals(Money::franc(5)));
+		$this->assertFalse($franc->equals(Money::franc(6)));
+		$this->assertFalse($franc->equals(Money::dollar(5)));
 	}
 }
