@@ -8,8 +8,10 @@ class Money
 
     function equals($obj)
     {
-        return $this->amount == $obj->amount
-            && get_class($this) == get_class($obj);
+        $money = new Money();
+        $money = $obj;
+        return $this->amount == $money->amount
+            && get_class($this) == get_class($money);
     }
 
     function doller($amnt)
@@ -31,6 +33,11 @@ class Money
     {
         $this->amount = $amnt;
         $this->currency = $crncy;
+    }
+
+    function times($amnt)
+    {
+        return null;
     }
 
 }
