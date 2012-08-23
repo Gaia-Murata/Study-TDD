@@ -57,4 +57,11 @@ class money_Test extends PHPUnit_Framework_TestCase
         $this->assertEquals("CHF", $money->franc(1)->currency() );
     }
 
+    public function testDifferentClassEquality()
+    {
+        $money = new Money(10, "CHF");
+        $franc = new Franc(10, "CHF");
+        $this->assertTrue( $money->equals($franc) );
+    }
+
 }
