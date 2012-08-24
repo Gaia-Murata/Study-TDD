@@ -1,19 +1,25 @@
 <?php
 require_once 'Franc.php';
+require_once 'Money.php';
 
 class FrancTest extends PHPUnit_Framework_TestCase
 {
 	public function testMultiplication()
 	{
-		$five = new Franc(5);		
-		$this->assertEquals(new Franc(10), $five->times(2));
-		$this->assertEquals(new Franc(15), $five->times(3));
+		$five = new Money(5, null);
+		$this->assertEquals(Money::franc(10), $five->franc(5)->times(2));
+		$this->assertEquals(Money::franc(15), $five->franc(5)->times(3));
 	}	
 
 	public function testEquality()
 	{
-		$five = new Franc(5);
-		$this->assertTrue($five->equals(new Franc(5)));
-		$this->assertFalse($five->equals(new Franc(6)));
+		$five = new Money(5, null);
+		$this->assertTrue($five->franc(5)->equals(Money::franc(5)));
+		$this->assertFalse($five->franc(5)->equals(Money::franc(6)));
+	}
+
+	public function testCurrency()
+	{
+		
 	}
 }
