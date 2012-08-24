@@ -5,13 +5,16 @@ class Money
     protected $amount;
     protected $currency;
 
+    function Money($amnt, $crncy)
+    {
+        $this->amount = $amnt;
+        $this->currency = $crncy;
+    }
 
     function equals($obj)
     {
-        $money = new Money();
-        $money = $obj;
-        return $this->amount == $money->amount
-            && get_class($this) == get_class($money);
+        return $this->amount == $obj->amount
+            && $this->currency() === $obj->currency();
     }
 
     function doller($amnt)
