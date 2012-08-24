@@ -5,7 +5,7 @@ class Money
     protected $amount;
     protected $currency;
 
-    function Money($amnt, $crncy)
+    function __construct($amnt, $crncy)
     {
         $this->amount = $amnt;
         $this->currency = $crncy;
@@ -17,12 +17,12 @@ class Money
             && $this->currency() === $obj->currency();
     }
 
-    function doller($amnt)
+    static function doller($amnt)
     {
         return new Doller($amnt, "USD");
     }
 
-    function franc($amnt)
+    static function franc($amnt)
     {
         return new Franc($amnt, "CHF");
     }
@@ -38,9 +38,9 @@ class Money
         $this->currency = $crncy;
     }
 
-    function times($amnt)
+    function times($multi)
     {
-        return null;
+        return new Money($this->amount * $multi, $this->currency);
     }
 
 }
@@ -48,14 +48,9 @@ class Money
 class Doller extends Money
 {
 
-    function Doller($amnt, $crncy)
+    function __construct($amnt, $crncy)
     {
         $this->super($amnt, $crncy);
-    }
-
-    function times($multi)
-    {
-        return new Doller($this->amount * $multi, $this->currency);
     }
 
 }
@@ -64,14 +59,9 @@ class Doller extends Money
 class Franc extends Money
 {
 
-    function Franc($amnt, $crncy)
+    function __construct($amnt, $crncy)
     {
         $this->super($amnt, $crncy);
-    }
-
-    function times($multi)
-    {
-        return new Franc($this->amount * $multi, $this->currency);
     }
 
 }
