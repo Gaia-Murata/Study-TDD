@@ -20,6 +20,6 @@ class FrancTest extends PHPUnit_Framework_TestCase
 
 	public function testCurrency()
 	{
-		
+		$this->assertEquals("CHF", Money::franc(1)->currency());
 	}
 }

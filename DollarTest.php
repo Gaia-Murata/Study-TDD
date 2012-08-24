@@ -27,5 +27,6 @@ class DollarTest extends PHPUnit_Framework_TestCase
 
 	public function testCurrency()
 	{
+		$this->assertEquals("USD", Money::dollar(1)->currency());
 	}
 }
