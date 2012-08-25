@@ -17,3 +17,5 @@ requireのファイルなんかも整理した
 	既にサブクラスのコンストラクタを削除していたという事実が発覚する
 	
 	Moneyテストでdollarの参照を行なっていたテストケースがあり、moneyのequalsメソッドでテストの書き換えを実施した
+	用なしのdollarを削除した
+	次は、Francのテストだが、moneyの中でのtestDifferentClassEqualityを削除できるか考える
