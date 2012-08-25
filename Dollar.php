@@ -8,7 +8,4 @@ class Dollar extends Money
 		return Money::dollar($this->amount * $multiplier); 
 	}
 }
-
-
-
 ?>
