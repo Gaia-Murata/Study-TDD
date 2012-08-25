@@ -17,9 +17,4 @@ class FrancTest extends PHPUnit_Framework_TestCase
 		$this->assertTrue($five->franc(5)->equals(Money::franc(5)));
 		$this->assertFalse($five->franc(5)->equals(Money::franc(6)));
 	}
-
-	public function testCurrency()
-	{
-		$this->assertEquals("CHF", Money::franc(1)->currency());
-	}
 }
