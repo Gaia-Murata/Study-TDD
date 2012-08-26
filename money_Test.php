@@ -38,12 +38,6 @@ class money_Test extends PHPUnit_Framework_TestCase
         $this->assertFalse($obj1->equals($obj3));
 
         $obj1 = Money::franc(5);
-        $obj2 = Money::franc(5);
-        $obj3 = Money::franc(6);
-        $this->assertTrue($obj1->equals($obj2));
-        $this->assertFalse($obj1->equals($obj3));
-
-        $obj1 = Money::franc(5);
         $obj2 = Money::doller(5);
         $this->assertFalse($obj1->equals($obj2));
     }
@@ -52,13 +46,6 @@ class money_Test extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals("USD", Money::doller(1)->currency() );
         $this->assertEquals("CHF", Money::franc(1)->currency() );
-    }
-
-    public function testDifferentClassEquality()
-    {
-        $money = new Money(10, "CHF");
-        $franc = new Franc(10, "CHF");
-        $this->assertTrue( $money->equals($franc) );
     }
 
 }

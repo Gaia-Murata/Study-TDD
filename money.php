@@ -56,12 +56,4 @@ class Doller extends Money
 }
 
 
-class Franc extends Money
-{
 
-    function __construct($amnt, $crncy)
-    {
-        $this->super($amnt, $crncy);
-    }
-
-}
