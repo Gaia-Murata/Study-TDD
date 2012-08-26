@@ -20,10 +20,11 @@ requireのファイルなんかも整理した
 	用なしのdollarを削除した
 	次は、Francのテストだが、moneyの中でのtestDifferentClassEqualityを削除できるか考える
 ------------------------------------------
-12ソソソソfrancソソソソソソソソソソソソtestDifferentClassEquality()ソソソソソソソソソソソソソソソソ
-	ソソソソtestDifferent(ryソソソソソ
-		ソソソソ(ソソソソソソソソソソソソソソソソソ)ソソソソソソソtestEqualityソソソソソソソソソソソソソ
-	ソソソソソソソソソソtestDiff(ryソソ
-  ソfrancソソソソソソソ
+12章スタート
+	francを削除したい
+		moneyTestでtestDifferentでfrancを参照している。
+			そもそも等価性（違うdollarとfrancでのふるまい)を担保することができているかtestEqualityを見てみる
+		問題なさそうなので、testDifferentを削除する
+	francも削除する
   ---------------------------
 
