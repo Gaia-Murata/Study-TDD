@@ -1,6 +1,5 @@
 <?php
 require_once 'Bank.php';
-require_once 'Sum.php';
 
 class BankTest extends PHPUnit_Framework_TestCase
 {

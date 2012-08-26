@@ -3,8 +3,10 @@ require_once 'Money.php';
 
 class Bank
 {
-	public function reduce($sourceCurrent, $stringCurrencyTo)	
+	public function reduce($sourceObject, $stringCurrencyTo)	
 	{
-		return Money::dollar(10);		
+		$sum = new Sum($sourceObject->augend, $sourceObject->addend);
+		$amount = $sum->augend->getAmount() + $sum->addend->getAmount();
+		return new Money($amount, $stringCurrencyTo);
 	}
 }

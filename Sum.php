@@ -1,4 +1,5 @@
 <?php
+require_once 'Expression.php';
 
 class Sum implements Expression
 {
