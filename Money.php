@@ -1,7 +1,7 @@
 ﻿<?php
 require_once 'Bank.php';
 require_once 'Expression.php';
-
+require_once 'Sum.php';
 
 class Money implements Expression
 {
@@ -39,9 +39,9 @@ class Money implements Expression
 		return $this->currency;
 	}
 	
-	public function plus($additiveObject)
+	public function plus($addendObject)
 	{
-		return new Money($this->amount + $additiveObject->amount, $this->currency);	
+		return new Sum($this, $addendObject);
 	}
 
 }
