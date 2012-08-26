@@ -21,14 +21,6 @@ class money_Test extends PHPUnit_Framework_TestCase
         $this->assertTrue( Money::doller(15)->equals($five->times(3)) );
     }
 
-    public function  testFrancMultiplication()
-    {
-        $five = Money::franc(5);
-        $this->assertTrue( Money::franc(10)->equals($five->times(2)) );
-        $this->assertTrue( Money::franc(15)->equals($five->times(3)) );
-
-    }
-
     public function testEquality()
     {
         $obj1 = Money::doller(5);
