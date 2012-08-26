@@ -40,4 +40,10 @@ class money_Test extends PHPUnit_Framework_TestCase
         $this->assertEquals("CHF", Money::franc(1)->currency() );
     }
 
+    public function testSimpleAddition()
+    {
+        $sum = Money::doller(5)->plus(Money::doller(5));
+        $this->assertEquals(Money::doller(10),$sum);
+    }
+
 }
