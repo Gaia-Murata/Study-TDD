@@ -11,4 +11,11 @@ class Sum implements Expression
 		$this->augend = $augendObject;
 		$this->addend = $addendObject;	
 	}
+
+	public function reduce($stringCurrencyTo)
+	{
+		$amount = $this->augend->getAmount() + $this->addend->getAmount();		
+		
+		return new Money($amount, $stringCurrencyTo);
+	}
 }

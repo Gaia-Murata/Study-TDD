@@ -48,5 +48,10 @@ class Money implements Expression
 	{
 		return $this->amount;
 	}
+	
+	public function reduce($stringCurrencyTo)
+	{
+		return $this;		
+	}
 
 }
