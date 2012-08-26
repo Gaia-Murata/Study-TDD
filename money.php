@@ -43,6 +43,10 @@ class Money
         return new Money($this->amount * $multi, $this->currency);
     }
 
+    function plus($add)
+    {
+        return new Money($this->amount + $add->amount , $this->currency);
+    }
 }
 
 
