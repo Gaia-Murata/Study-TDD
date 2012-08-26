@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 class Money
 {
@@ -34,6 +34,11 @@ class Money
 	public function currency()
 	{
 		return $this->currency;
+	}
+	
+	public function plus($additiveObject)
+	{
+		return new Money($this->amount + $additiveObject->amount, $this->currency);	
 	}
 
 }

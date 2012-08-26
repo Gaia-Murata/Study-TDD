@@ -1,29 +1,29 @@
-��2��ʬ�ٶ��񥹥�����
-	��������1���ٶ���ʬ�ǡ������ѡ����饹�˥᥽�åɤ�褻�Ƥ����Τˡ����֥��饹�Ǻ�����Ƥ��ʤ��᥽�åɤ䡢�ƥ��Ȥ������ƥ��쥤�ˤ���
-----------------��������٥å��εս����Ϥޤ�---------------
-�ʤ�git��������������ƥ��ȡ�reset�������Ȥˡ�rebase --abortŪ�ʤ�Ĥ��ä�
+第2回分勉強会スタート
+	の前に第1回勉強会分で、スーパークラスにメソッドをよせていたのに、サブクラスで削除していないメソッドや、テストを削除してキレイにした
+----------------ここからベックの逆襲が始まる---------------
+なんかgitがおかしいからテスト　resetしたあとに、rebase --abort的なやつをやった
 
-git push -f origin HEAD^:master���äơ���⡼�ȥ�ݥ��ȥ�Υ��ߥåȤ�ä���
-���Ȥʤ�franc�Υ��饹���������Ƥ��ʤ���Τ�ƥ��Ȥ��Ƥ���᥽�åɤ�ä���
-require�Υե�����ʤ󤫤���������
----------------�褦�䤯��������٥å�����2�ο������Ϥޤ�----------
-10�ϤǤϡ�times�᥽�åɤΥ����ѡ����饹�˴󤻤뤳�ȣ��ͤ���
-	�᥽�åɤΥ���饤�󲽤�»ܡ�(�᥽�åɤε�ư��᥽�å����Τ��֤������뤳��
-	frac��dollar��times�᥽�åɤ��̲ߤ���ʬ������ǤϤʤ��ơ��ѿ����֤��褦�ˤ���
-	franc��times�᥽�åɤ�franc�ǤϤʤ���money���֤��褦�ˤ������Τǡ��Ȥꤢ�����ѹ����ƥƥ��Ȥ�¹Ԥ��Ƥߤ�=>����
-		francTest��dollarTest�ǤΡ�times�᥽�åɤΥƥ��ȹ��ܤǡ�equals�᥽�åɤ�Ȥä��ͤ򸫤�褦�˥ƥ��ȹ��ܤ�񤭴�����
+git push -f origin HEAD^:masterをやって、リモートリポジトリのコミットを消した
+あとなんかfrancのクラスで定義されていないものをテストしているメソッドを消した
+requireのファイルなんかも整理した
+---------------ようやくここからベックの第2の人生が始まる----------
+10章では、timesメソッドのスーパークラスに寄せることｗ考える
+	メソッドのインライン化を実施　(メソッドの起動をメソッド本体と置き換えること
+	fracとdollarのtimesメソッドの通貨の部分を定数ではなくて、変数で返すようにした
+	francのtimesメソッドでfrancではなく、moneyを返すようにしたいので、とりあえず変更してテストを実行してみる=>失敗
+		francTestとdollarTestでの、timesメソッドのテスト項目で、equalsメソッドを使って値を見るようにテスト項目を書き換えた
 ------------------------------------------------------------------
-11�ϥ�������
-	���˥��֥��饹�Υ��󥹥ȥ饯���������Ƥ����Ȥ������¤�ȯ�Ф���
+11章スタート
+	既にサブクラスのコンストラクタを削除していたという事実が発覚する
 	
-	Money�ƥ��Ȥ�dollar�λ��Ȥ�ԤʤäƤ����ƥ��ȥ����������ꡢmoney��equals�᥽�åɤǥƥ��Ȥν񤭴�����»ܤ���
-	�Ѥʤ���dollar��������
-	���ϡ�Franc�Υƥ��Ȥ�����money����Ǥ�testDifferentClassEquality�����Ǥ��뤫�ͤ���
+	Moneyテストでdollarの参照を行なっていたテストケースがあり、moneyのequalsメソッドでテストの書き換えを実施した
+	用なしのdollarを削除した
+	次は、Francのテストだが、moneyの中でのtestDifferentClassEqualityを削除できるか考える
 ------------------------------------------
-12�
-����franc������������testDifferentClassEquality()����������������
-	����testDifferent(ry�����
-		����(�����������������)�������testEquality�������������
-	����������testDiff(ry��
-  �franc�������
+12ソソソソfrancソソソソソソソソソソソソtestDifferentClassEquality()ソソソソソソソソソソソソソソソソ
+	ソソソソtestDifferent(ryソソソソソ
+		ソソソソ(ソソソソソソソソソソソソソソソソソ)ソソソソソソソtestEqualityソソソソソソソソソソソソソ
+	ソソソソソソソソソソtestDiff(ryソソ
+  ソfrancソソソソソソソ
   ---------------------------
+
