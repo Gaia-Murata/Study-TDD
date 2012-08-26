@@ -1,5 +1,4 @@
 <?php
-require_once 'Dollar.php';
 require_once 'Franc.php';
 
 class Money
@@ -20,12 +19,12 @@ class Money
 
 	public static function dollar($amount)
 	{
-		return new Dollar($amount, "USD");		
+		return new Money($amount, "USD");		
 	}
 
  	public static function franc($amount)
 	{
-		return new Franc($amount, "CHF");		
+		return new Money($amount, "CHF");		
 	}	
 
 	public function times($multiplier)
