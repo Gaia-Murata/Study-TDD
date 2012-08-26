@@ -19,12 +19,12 @@ class Money
 
     static function doller($amnt)
     {
-        return new Doller($amnt, "USD");
+        return new Money($amnt, "USD");
     }
 
     static function franc($amnt)
     {
-        return new Franc($amnt, "CHF");
+        return new Money($amnt, "CHF");
     }
 
     function currency()
