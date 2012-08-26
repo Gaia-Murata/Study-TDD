@@ -19,12 +19,25 @@ requireのファイルなんかも整理した
 	Moneyテストでdollarの参照を行なっていたテストケースがあり、moneyのequalsメソッドでテストの書き換えを実施した
 	用なしのdollarを削除した
 	次は、Francのテストだが、moneyの中でのtestDifferentClassEqualityを削除できるか考える
-------------------------------------------
-12章スタート
+
+11章スタート
 	francを削除したい
 		moneyTestでtestDifferentでfrancを参照している。
 			そもそも等価性（違うdollarとfrancでのふるまい)を担保することができているかtestEqualityを見てみる
 		問題なさそうなので、testDifferentを削除する
 	francも削除する
   ---------------------------
+  12章
+  	まずは異なる紙幣の加法に入る前に、簡単に同一貨幣の足し算を実装することにする。
+		シンプルな加法のテストコード testSimpleAdditionを実装した。
+			Bankクラスとexpressionインターフェースを実装する。
+				BankがExpressionに為替レートを適用することにより貨幣換算を行う
+					テストコードを実装する。
+				Expressionインターフェースを実装し、moneyはインターフェースを満たす宣言をする
+			Bankクラスを実装する
+		reduceのスタブを実装する
+	とりあえずbankのreduceメソッドで簡易的にドルを返した
+	グリーンバーでテストをパスする
+----------------------------
+
 
