@@ -1,5 +1,4 @@
 <?php
-require_once 'Franc.php';
 
 class Money
 {
