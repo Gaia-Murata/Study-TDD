@@ -1,6 +1,11 @@
 <?php
 
-class Money
+interface Expression
+{
+    public function plus($add);
+}
+
+class Money implements Expression
 {
     protected $amount;
     protected $currency;
