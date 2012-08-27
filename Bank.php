@@ -5,7 +5,17 @@ class Bank
 {
 	public function reduce($sourceObject, $stringCurrencyTo)	
 	{
-		return $sourceObject->reduce($stringCurrencyTo);
+		return $sourceObject->reduce($this, $stringCurrencyTo);
 	}
 
+	public function rate($stringCurrencyFrom, $stringCurrencyTo)
+	{
+		if ($stringCurrencyFrom === "CHF" && $stringCurrencyTo === "USD") {
+			$rate = 2;
+		} else {
+			$rate = 1;
+		}
+
+		return $rate;
+	}
 }

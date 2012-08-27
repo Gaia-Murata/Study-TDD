@@ -1,5 +1,6 @@
 <?php 
 interface Expression
 {
-	public function reduce($stringCurrencyTo);	
+	public function reduce($bank, $stringCurrencyTo);	
 }
+
