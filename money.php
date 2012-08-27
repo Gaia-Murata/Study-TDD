@@ -10,6 +10,7 @@ class Bank
 {
     public function reduce($source, $currency)
     {
+        //       $sum = (Sum)$source;
         return $source->reduce($currency);
     }
 }

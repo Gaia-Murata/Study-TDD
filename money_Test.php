@@ -65,4 +65,12 @@ class money_Test extends PHPUnit_Framework_TestCase
         $result = $bank->reduce($sum, "USD");
         $this->assertEquals(Money::doller(7), $result);
     }
+
+    public function testReduceMoney()
+    {
+        $bank = new Bank();
+        $sum = new Sum(Money::doller(1), Money::doller(0));
+        $result = $bank->reduce($sum, "USD");
+        $this->assertEquals(Money::doller(1), $result);
+    }
 }
