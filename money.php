@@ -10,7 +10,8 @@ class Bank
 {
     public function reduce($source, $currency)
     {
-        return Money::doller(10);
+        $new_amount = $source->augend->amount + $source->addend->amount;
+        return new Money($new_amount, $currency);
     }
 }
 
@@ -35,8 +36,8 @@ class Sum implements Expression
 
 class Money implements Expression
 {
-    protected $amount;
-    protected $currency;
+    public $amount;
+    public $currency;
 
     function __construct($amnt, $crncy)
     {
@@ -78,7 +79,7 @@ class Money implements Expression
 
     function plus($add)
     {
-        return new Sum($this->amount + $add->amount , $this->currency);
+        return new Sum($this, $add);
     }
 }
 
