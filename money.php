@@ -9,7 +9,7 @@ class Bank
 {
     public function reduce($source, $currency)
     {
-        return null;
+        return Money::doller(10);
     }
 }
 
