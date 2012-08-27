@@ -10,8 +10,7 @@ class Bank
 {
     public function reduce($source, $currency)
     {
-        $new_amount = $source->augend->amount + $source->addend->amount;
-        return new Money($new_amount, $currency);
+        return $source->reduce($currency);
     }
 }
 
@@ -31,6 +30,13 @@ class Sum implements Expression
     {
 
     }
+
+    function reduce($currency)
+    {
+        $new_amount = $this->augend->amount + $this->addend->amount;
+        return new Money($new_amount, $currency);
+    }
+
 }
 
 
