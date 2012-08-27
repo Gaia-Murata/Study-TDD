@@ -15,10 +15,21 @@ class Bank
 }
 
 
-class Sum
+class Sum implements Expression
 {
     public $augend;
     public $addend;
+
+    function __construct($aug, $add)
+    {
+        $this->augend = $aug;
+        $this->addend = $add;
+    }
+
+    function plus($add)
+    {
+
+    }
 }
 
 
