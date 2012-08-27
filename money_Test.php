@@ -42,8 +42,12 @@ class money_Test extends PHPUnit_Framework_TestCase
 
     public function testSimpleAddition()
     {
-        $sum = Money::doller(5)->plus(Money::doller(5));
-        $this->assertEquals(Money::doller(10),$sum);
+        //        $sum = Money::doller(5)->plus(Money::doller(5));
+        $five = Money::doller(5);
+        $sum = $five->plus($five);
+        $bank = new Bank();
+        $reduced = $bank->reduce($sum, "USD");
+        $this->assertEquals(Money::doller(10),$reduced);
     }
 
 }
