@@ -5,6 +5,7 @@ interface Expression
     public function plus($add);
 }
 
+
 class Bank
 {
     public function reduce($source, $currency)
@@ -12,6 +13,14 @@ class Bank
         return Money::doller(10);
     }
 }
+
+
+class Sum
+{
+    public $augend;
+    public $addend;
+}
+
 
 class Money implements Expression
 {
