@@ -5,6 +5,14 @@ interface Expression
     public function plus($add);
 }
 
+class Bank
+{
+    public function reduce($source, $currency)
+    {
+        return null;
+    }
+}
+
 class Money implements Expression
 {
     protected $amount;
