@@ -76,4 +76,4 @@ requireのファイルなんかも整理した
 		Expressionにplus()を追加したら、Sum::plus()を実装しろと怒られる
 			PHP Fatal error:  Class Sum contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Expression::plus
 
-
+			sum::plus()をとりあえずスタブ実装してグリーンテストにした

@@ -19,4 +19,9 @@ class Sum implements Expression
 		
 		return new Money($amount, $stringCurrencyTo);
 	}
+	
+	public function plus($addendObject)
+	{
+		return null;
+	}
 }
