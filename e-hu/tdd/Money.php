@@ -19,6 +19,14 @@ class Money
         $this->currency = $currency;
     }
 
+    public static function dollar($amount){
+        return new Money($amount, "USD");
+    }
+
+    public static function franc($amount){
+        return new Money($amount, "CHF");
+    }
+
     public function equals($money)
     {
         if($this->currency == $money->currency){
