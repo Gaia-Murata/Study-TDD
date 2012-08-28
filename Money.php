@@ -51,7 +51,7 @@ class Money implements Expression
 	
 	public function reduce($bank, $stringCurrencyTo)
 	{
-		$rate = $bank->rate($this->getCurrency(), $stringCurrencyTo);
+		$rate = $bank->getRate($this->getCurrency(), $stringCurrencyTo);
 
 		return new Money($this->amount / $rate, $stringCurrencyTo);		
 	}
