@@ -18,6 +18,11 @@ class Bank
     {
 
     }
+
+    public function rate($from, $to)
+    {
+        return ($from === "CHF" && $to === "USD") ? 2 : 1 ;
+    }
 }
 
 
@@ -96,7 +101,7 @@ class Money implements Expression
 
     function reduce($bank, $crncy)
     {
-        $rate = ($this->currency === "CHF" && $crncy === "USD") ? 2 : 1 ;
+        $rate = $bank->rate($this->currency, $crncy);
         return new Money($this->amount/$rate, $crncy);
     }
 }
