@@ -22,6 +22,6 @@ class Sum implements Expression
 	
 	public function plus($addendObject)
 	{
-		return null;
+		return new Sum($this, $addendObject);
 	}
 }
