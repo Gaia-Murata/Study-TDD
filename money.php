@@ -3,6 +3,7 @@
 interface Expression
 {
     public function plus($add);
+    public function reduce($currency);
 }
 
 
@@ -10,9 +11,6 @@ class Bank
 {
     public function reduce($source, $currency)
     {
-        if( $source instanceof Money){
-            return $source;
-        }
         return $source->reduce($currency);
     }
 }
@@ -89,6 +87,11 @@ class Money implements Expression
     function plus($add)
     {
         return new Sum($this, $add);
+    }
+
+    function reduce($currency)
+    {
+        return $this;
     }
 }
 
