@@ -73,5 +73,7 @@ requireのファイルなんかも整理した
 		５ドルと１０フランを足し合わせるテストを書く =>　10ドルと返ってきて欲しいところが、15ドルとなって返ってきてしまう
 			Sumの部分で変換を実施した。=>グリーン
 
+		Expressionにplus()を追加したら、Sum::plus()を実装しろと怒られる
+			PHP Fatal error:  Class Sum contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Expression::plus
 
 
