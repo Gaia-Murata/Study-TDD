@@ -6,7 +6,7 @@ require_once 'Franc.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 9 test
+ * Chapter 10 test
  */
 class MoneyTest extends PHPUnit_Framework_TestCase
 {
@@ -20,12 +20,9 @@ class MoneyTest extends PHPUnit_Framework_TestCase
 
     public function testEquals()
     {
-            $money = new Money();
-            $franc1  = $money->franc(10);
-            $franc2  = new Franc(10);
-            $this->assertEquals($franc1->currency(), $franc2->currency());
-        
-        
+        $dollar = new Money(5, 'USD');
+        $franc  = new Money(5, 'CHF');
+        $this->assertFalse($dollar->equals($franc));
     }
 
 }

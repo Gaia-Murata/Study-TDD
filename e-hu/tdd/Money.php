@@ -6,26 +6,28 @@ require_once 'Franc.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 8
+ * Chapter 10
  */
 class Money
 {
     public $amount;
     public $currency;
 
-    public function dollar($amount)
+    function __construct($amount, $currency)
     {
-        return new Dollar($amount);
+        $this->amount = $amount;
+        $this->currency = $currency;
     }
 
-    public function franc($amount)
+    public function equals($money)
     {
-        return new Franc($amount);
+        if($this->currency == $money->currency){
+            return $this->amount == $money->amount;
+        }
+        return false;
     }
 
-    public function currency()
-    {
-        return $this->currency;
+    public function times($time){
+        return new Money($this->amount * $time, $this->currency);
     }
-
 }
