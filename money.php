@@ -10,7 +10,9 @@ class Bank
 {
     public function reduce($source, $currency)
     {
-        //       $sum = (Sum)$source;
+        if( $source instanceof Money){
+            return $source;
+        }
         return $source->reduce($currency);
     }
 }
