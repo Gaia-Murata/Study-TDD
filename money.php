@@ -13,6 +13,11 @@ class Bank
     {
         return $source->reduce($currency);
     }
+
+    public function addrate()
+    {
+
+    }
 }
 
 
@@ -89,9 +94,10 @@ class Money implements Expression
         return new Sum($this, $add);
     }
 
-    function reduce($currency)
+    function reduce($crncy)
     {
-        return $this;
+        $rate = ($this->currency === "CHF" && $crncy === "USD") ? 2 : 1 ;
+        return new Money($this->amount/$rate, $crncy);
     }
 }
 
