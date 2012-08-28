@@ -3,7 +3,7 @@
 interface Expression
 {
     public function plus($add);
-    public function reduce($currency);
+    public function reduce($bank, $currency);
 }
 
 
@@ -11,7 +11,7 @@ class Bank
 {
     public function reduce($source, $currency)
     {
-        return $source->reduce($currency);
+        return $source->reduce($this, $currency);
     }
 
     public function addrate()
@@ -37,7 +37,7 @@ class Sum implements Expression
 
     }
 
-    function reduce($currency)
+    function reduce($bank, $currency)
     {
         $new_amount = $this->augend->amount + $this->addend->amount;
         return new Money($new_amount, $currency);
@@ -94,7 +94,7 @@ class Money implements Expression
         return new Sum($this, $add);
     }
 
-    function reduce($crncy)
+    function reduce($bank, $crncy)
     {
         $rate = ($this->currency === "CHF" && $crncy === "USD") ? 2 : 1 ;
         return new Money($this->amount/$rate, $crncy);
