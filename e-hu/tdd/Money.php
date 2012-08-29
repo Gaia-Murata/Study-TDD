@@ -6,12 +6,12 @@ require_once 'Franc.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 10
+ * Chapter 14
  */
 class Money
 {
-    public $amount;
-    public $currency;
+    private $amount;
+    private $currency;
 
     function __construct($amount, $currency)
     {
@@ -19,11 +19,23 @@ class Money
         $this->currency = $currency;
     }
 
-    public static function dollar($amount){
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    public function getCurrency()
+    {
+        return $this->currency;
+    }
+
+    public static function dollar($amount)
+    {
         return new Money($amount, "USD");
     }
 
-    public static function franc($amount){
+    public static function franc($amount)
+    {
         return new Money($amount, "CHF");
     }
 
