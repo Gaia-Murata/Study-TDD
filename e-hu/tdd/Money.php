@@ -2,11 +2,12 @@
 
 require_once 'Dollar.php';
 require_once 'Franc.php';
+require_once 'Bank.php';
 
 /**
  * @author Ethan Hu
  * 
- * Chapter 14
+ * Chapter 15
  */
 class Money
 {
@@ -47,7 +48,18 @@ class Money
         return false;
     }
 
-    public function times($time){
+    public function times($time)
+    {
         return new Money($this->amount * $time, $this->currency);
     }
+
+    public function plus($addend)
+    {
+       if($this->getCurrency() == $addend->getCurrency()){
+           return new Money($this->getAmount() + $addend->getAmount(), $this->getCurrency()); 
+       }
+       $reduce = Bank::reduce($addend, $this->getCurrency());
+       return new Money($this->getAmount() + $reduce->getAmount(), $this->getCurrency());
+    }   
+
 }

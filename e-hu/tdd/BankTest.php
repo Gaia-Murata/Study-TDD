@@ -4,7 +4,7 @@ require_once 'Bank.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 14 test
+ * Chapter 15 test
  */
 class MoneyTest extends PHPUnit_Framework_TestCase
 {
