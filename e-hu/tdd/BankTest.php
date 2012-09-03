@@ -4,7 +4,7 @@ require_once 'Bank.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 15 test
+ * Chapter 16 test
  */
 class MoneyTest extends PHPUnit_Framework_TestCase
 {
@@ -16,15 +16,17 @@ class MoneyTest extends PHPUnit_Framework_TestCase
     {
     }
 
-    public function testEquals()
-    {
+    public function testReduce()
+    {        
         Bank::addRate("USD", "CHF", 2);
-        $this->assertTrue(Money::dollar(5)->equals(Bank::reduce(Money::dollar(5), "USD")));
-        $this->assertTrue(Money::dollar(5)->equals(Bank::reduce(Money::franc(10), "USD")));
-        $this->assertTrue(Money::franc(10)->equals(Bank::reduce(Money::franc(10), "CHF")));
-        $this->assertTrue(Money::franc(10)->equals(Bank::reduce(Money::dollar(5), "CHF")));
-        $this->assertFalse(Money::dollar(5)->equals(Bank::reduce(Money::franc(5), "USD")));
-        $this->assertFalse(Money::franc(5)->equals(Bank::reduce(Money::dollar(5), "CHF")));
+
+        $dollar = new Money(5,  "USD");
+        $this->assertTrue($dollar->equals(Bank::reduce(new Money(5,   "USD"), "USD")));
+        $this->assertTrue($dollar->equals(Bank::reduce(new Money(10,  "CHF"), "USD")));
+
+        $franc = new Money(10,  "CHF");
+        $this->assertTrue($franc->equals(Bank::reduce(new Money(10,  "CHF"), "CHF")));
+        $this->assertTrue($franc->equals(Bank::reduce(new Money(5,   "USD"), "CHF")));
     }
 
 }

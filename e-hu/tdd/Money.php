@@ -1,13 +1,11 @@
 <?php
 
-require_once 'Dollar.php';
-require_once 'Franc.php';
 require_once 'Bank.php';
 
 /**
  * @author Ethan Hu
  * 
- * Chapter 15
+ * Chapter 16
  */
 class Money
 {
@@ -28,16 +26,6 @@ class Money
     public function getCurrency()
     {
         return $this->currency;
-    }
-
-    public static function dollar($amount)
-    {
-        return new Money($amount, "USD");
-    }
-
-    public static function franc($amount)
-    {
-        return new Money($amount, "CHF");
     }
 
     public function equals($money)
@@ -61,5 +49,4 @@ class Money
        $reduce = Bank::reduce($addend, $this->getCurrency());
        return new Money($this->getAmount() + $reduce->getAmount(), $this->getCurrency());
     }   
-
 }

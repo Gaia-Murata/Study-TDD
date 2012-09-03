@@ -5,7 +5,7 @@ require_once 'Money.php';
 /**
  * @author Ethan Hu
  * 
- * Chapter 14
+ * Chapter 16
  */
 class Bank
 {

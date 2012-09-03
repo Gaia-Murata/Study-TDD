@@ -1,12 +1,11 @@
 <?php
 
-require_once 'Money.php';
-require_once 'Dollar.php';
-require_once 'Franc.php';
+require_once 'Bank.php';
+
 /**
  * @author Ethan Hu
  * 
- * Chapter 15 test
+ * Chapter 16 test
  */
 class MoneyTest extends PHPUnit_Framework_TestCase
 {
@@ -36,15 +35,19 @@ class MoneyTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($franc->getCurrency(), "CHF");
     }
 
-
     public function testEquals()
     {
-        $this->assertTrue(Money::dollar(5)->equals(Money::dollar(5)));
-        $this->assertTrue(Money::dollar(10)->equals(Money::dollar(10)));
-        $this->assertTrue(Money::dollar(15)->equals(Money::dollar(15)));
-        $this->assertFalse(Money::dollar(15)->equals(Money::franc(15)));
-        $this->assertFalse(Money::dollar(10)->equals(Money::franc(10)));
-        $this->assertFalse(Money::dollar(5)->equals(Money::franc(5)));
+        $dollar = new Money(5,  "USD");
+        $this->assertTrue($dollar->equals(new Money(5,  "USD")));
+        $franc = new Money(5,  "CHF");
+        $this->assertTrue($franc->equals(new Money(5,  "CHF")));
+        $this->assertFalse($franc->equals($dollar));
+
+        $dollar = new Money(10,  "USD");
+        $this->assertTrue($dollar->equals(new Money(10,  "USD")));
+        $franc = new Money(10,  "CHF");
+        $this->assertTrue($franc->equals(new Money(10,  "CHF")));
+        $this->assertFalse($franc->equals($dollar));
     }
 
     public function testTimes()
@@ -52,10 +55,10 @@ class MoneyTest extends PHPUnit_Framework_TestCase
         $dollar = new Money(10, "USD");
         $franc = new Money(10, "CHF");
 
-        $this->assertTrue($dollar->times(3)->equals(Money::dollar(30)));
-        $this->assertTrue($franc->times(3)->equals(Money::franc(30)));
-        $this->assertTrue($dollar->times(5)->equals(Money::dollar(50)));
-        $this->assertTrue($franc->times(5)->equals(Money::franc(50)));
+        $this->assertTrue($dollar->times(3)->equals(new Money(30, "USD")));
+        $this->assertTrue($dollar->times(5)->equals(new Money(50, "USD")));
+        $this->assertTrue($franc->times(3)->equals(new Money(30, "CHF")));
+        $this->assertTrue($franc->times(5)->equals(new Money(50, "CHF")));
     }
 
     public function testPlus()
@@ -72,7 +75,6 @@ class MoneyTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(Bank::reduce($dollar->plus($franc), "CHF")->equals(new Money(30, "CHF")));
         $this->assertTrue(Bank::reduce($franc->plus($dollar), "USD")->equals(new Money(15, "USD")));
     }
-
 
 }
 
