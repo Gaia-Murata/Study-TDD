@@ -62,10 +62,9 @@ class MoneyTest extends PHPUnit_Framework_TestCase
 		$bank = new Bank();
 		$bank->setRate("CHF", "USD", 2);
 		$sum = new Sum($fiveBucks, $tenFrancs);
-		$sum->times(2);
-		$result = $bank->reduce($sum, "USD");
+		$sumTimes = $sum->times(2);
+		$result = $bank->reduce($sumTimes, "USD");
 		$this->assertEquals(Money::dollar(20), $result);
 	}
-
 }
 ?>

@@ -84,3 +84,4 @@ requireのファイルなんかも整理した
 
 
 		testSumTimesMoneyを書いてみる
+		１６章終わらせた
